@@ -1,0 +1,69 @@
+import mongoose from "mongoose";
+const orderSchema=new mongoose.Schema({
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        required:true
+    },
+    items:[
+       {
+         product:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Product",
+            required:true
+         },
+         price:{
+type:Number,
+ required:true
+         },
+         quantity:{
+            type:Number,
+            required:true
+         }
+       }
+    ],
+     shippingAddress:{
+        name:{
+            type:String,
+            required:true
+        },
+        phone:{
+            type:String,
+            required:true
+        },
+        address:{
+            type:String,
+            required:true
+        },
+        city:{
+            type:String,
+            required:true
+        }
+     },
+     totalAmout:{
+        type:Number,
+        required:true
+     },
+     paymentMethod:{
+        type:String,
+        enum:["COD","Card"],
+        required:true
+     },
+     paymentStatus:{
+type:String,
+enum:["Pending","Paid","Faild"],
+default:"Pending"
+     },
+      stripePaymentIntentId:{
+        type:String,
+        default:null
+      },
+      orderStatus:{
+        type:String,
+        enum:["Pending", "Processing", "Shipped", "Delivered", "Cancelled"],
+        default:"Pending"
+      }
+},
+{timestamps:true})
+
+export default mongoose.model("Order",orderSchema)
