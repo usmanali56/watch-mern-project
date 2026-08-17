@@ -8,6 +8,8 @@ import orderRoutes from "./routes/orderRoutes.js"
 import productRoutes from "./routes/productRoutes.js"
 import wishlistRoutes from "./routes/wishlistRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
+import newsletterRoutes from "./routes/newsletterRoutes.js";
 
 dotenv.config()
 connectDb()
@@ -23,6 +25,10 @@ app.use("/api/products", productRoutes)
 app.use("/api/wishlist", wishlistRoutes)
 app.use("/api/upload", uploadRoutes);
 app.use("/uploads", express.static("uploads")); 
+app.use("/api/contact", contactRoutes);
+app.use("/api/newsletter", newsletterRoutes);
+
+
 
 app.get("/", (req, res) => {
   res.send("Watch store backend start")
