@@ -7,6 +7,7 @@ import cartRoutes from "./routes/cartRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
 import productRoutes from "./routes/productRoutes.js"
 import wishlistRoutes from "./routes/wishlistRoutes.js"
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 dotenv.config()
 connectDb()
@@ -20,6 +21,8 @@ app.use("/api/cart", cartRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/products", productRoutes)
 app.use("/api/wishlist", wishlistRoutes)
+app.use("/api/upload", uploadRoutes);
+app.use("/uploads", express.static("uploads")); 
 
 app.get("/", (req, res) => {
   res.send("Watch store backend start")

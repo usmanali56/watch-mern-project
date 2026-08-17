@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Uploaded product images (local storage, no need to push to GitHub)
+uploads/
+
 # Environment variables (secrets - kabhi bhi GitHub par push nahi karni)
 .env
 

@@ -23,7 +23,7 @@ type:Number,
        }
     ],
      shippingAddress:{
-        name:{
+        fullName:{
             type:String,
             required:true
         },
@@ -40,7 +40,7 @@ type:Number,
             required:true
         }
      },
-     totalAmout:{
+     totalAmount:{
         type:Number,
         required:true
      },
@@ -51,7 +51,7 @@ type:Number,
      },
      paymentStatus:{
 type:String,
-enum:["Pending","Paid","Faild"],
+enum:["Pending","Paid","Failed"],
 default:"Pending"
      },
       stripePaymentIntentId:{
