@@ -327,7 +327,7 @@ const ManageProducts = () => {
                   </th>
 
                   <th className='py-3 px-3 sm:px-4 whitespace-nowrap'>
-                    Naam
+                    Name
                   </th>
 
                   <th className='py-3 px-3 sm:px-4 whitespace-nowrap'>

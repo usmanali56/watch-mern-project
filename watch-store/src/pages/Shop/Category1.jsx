@@ -122,7 +122,7 @@ const Category1 = () => {
                   {/* Wishlist icon - top right, shows on hover */}
                   <button
                     onClick={() => toggleWishlist(product._id)}
-                    className='absolute top-3 right-3 w-8 h-8 bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+                    className='absolute top-3 right-3 w-8 h-8 bg-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300'
                     aria-label='Add to wishlist'
                   >
                     <svg
@@ -143,12 +143,12 @@ const Category1 = () => {
                   <h3 className='uppercase text-sm font-medium'>{product.name}</h3>
 
                   <div className='mt-1'>
-                    <p className='text-sm text-gray-700 group-hover:hidden'>
+                    <p className='text-sm text-gray-700 md:group-hover:hidden'>
                       ${product.price?.toLocaleString()}.00
                     </p>
                     <button
                       onClick={() => addToCart(product._id)}
-                      className='hidden group-hover:block text-sm uppercase text-black hover:underline'
+                      className='block md:hidden md:group-hover:block text-sm uppercase text-black hover:underline mt-1 md:mt-0'
                     >
                       Add to Cart
                     </button>

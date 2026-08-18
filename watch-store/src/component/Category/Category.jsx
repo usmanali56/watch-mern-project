@@ -71,7 +71,7 @@ export default function Category() {
                 />
                 <button
                   onClick={() => toggleWishlist(product._id)}
-                  className="absolute top-3 right-3 bg-white p-2 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute top-3 right-3 bg-white p-2 rounded-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
                 >
                   <Heart
                     size={18}
@@ -87,12 +87,12 @@ export default function Category() {
 
               {/* Price / Add to cart on hover */}
               <div className="mt-1 text-sm">
-                <span className="text-gray-700 group-hover:hidden">
+                <span className="text-gray-700 md:group-hover:hidden">
                   ${product.price?.toLocaleString()}.00
                 </span>
                 <button
                   onClick={() => addToCart(product._id)}
-                  className="hidden group-hover:inline text-black underline"
+                  className="block md:hidden md:group-hover:inline text-black underline mt-1 md:mt-0"
                 >
                   ADD TO CART
                 </button>
